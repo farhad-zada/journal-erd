@@ -68,11 +68,11 @@ for table, references in tables.items():
         G.add_edge(table, ref)
 
 # Set plot size
-plt.figure(figsize=(20, 15))
+plt.figure(figsize=(50, 50))
 
 # Draw the graph
 pos = nx.spring_layout(G, seed=42)
-nx.draw(G, pos, with_labels=True, node_size=3000, node_color='lightblue', font_size=10, font_weight='bold', arrows=True, arrowstyle='-|>', arrowsize=15)
+nx.draw(G, pos, with_labels=True, node_size=5000, node_color='lightblue', font_size=10, font_weight='bold', arrows=True, arrowstyle='-|>', arrowsize=15)
 
 # Add labels to the edges
 edge_labels = {edge: edge[1] for edge in G.edges}
@@ -80,4 +80,5 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red', 
 
 # Show the plot
 plt.title("ERD for Database Tables")
-plt.show()
+plt.savefig("erd.png")
+# plt.show()
